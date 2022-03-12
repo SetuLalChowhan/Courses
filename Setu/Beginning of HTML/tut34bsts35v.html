@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(190, 74, 29, 0.438);
+        }
+        :root {
+            --card-color: white;
+            --maxw: 200px;
+            
+        }
+
+        .container {
+            
+            display: flex;
+            position: absolute;
+            top: 175px;
+            left: 111px;
+
+        }
+
+        .car {
+            border: 2px solid rgb(231, 144, 144);
+            width: var(--maxw);
+            height: var(--maxw);
+            margin: 35px 52px;
+            background-color: var(--card-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 14px 14px 16px grey;
+            /* border-radius: 59px; */
+            cursor: pointer;
+            color: rgb(99, 79, 79);
+            text-shadow: 2px 2px 16px rgb(99, 79, 79);
+            /* transition: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out; */
+            /* transition: all 1s ease-in-out; */
+            animation:setu 2s infinite alternate ease-in-out 2s ;
+            
+        }
+           
+        /* }
+        .car:hover{
+            background-color: blueviolet;
+            height: 300px;
+            width: 300px;
+            font-size: 30px ;
+            color: orangered;
+            transform: rotate(360deg);
+           
+            
+
+        } */
+        @keyframes setu {
+            0%{
+                border: radius 0px;
+                
+            }
+            50%{
+                background-color:tomato;
+                color: black;
+            }
+            100%{
+                border-radius:70px;
+                background-color: orangered;
+                color: rgb(0, 255, 242);
+            }
+            
+        }
+
+        
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="car" id="card1">
+            <h1>Card1</h1>
+        </div>
+        <div class="car" id="card2">
+            <h1>Card2</h1>
+        </div>
+        <div class="car" id="card3">
+            <h1>Card3</h1>
+        </div>
+        <div class="car" id="card4">
+            <h1>Card4</h1>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+   
+</head>
+<body>
+    <h1 class="er">Hello Guys</h1>
+    <p class="second">2nd</p>
+    <button  onclick= "setu()">Click</button>
+    <h1 >3rd</h1>
+    <button id="Third">click</button>
+    <h1>4th</h1>
+    <button id="Fourth">Click</button>
+  
+    <script>
+        const setu=()=>{
+            alert('This page is not working');
+        }
+        const third=document.getElementById('Third');
+        third.onclick=function (){
+            alert('This page is not working again');
+        }
+        const fourth=document.getElementById("Fourth");
+        const check=()=>{
+            alert("Fuck You!! I told you this page is not working");
+            console.log(event);
+            console.log(event.target);
+            console.log(event.type);
+        }
+
+        fourth.addEventListener('click',check);
+            
+      
+        
+        
+    </script>
+</body>
+</html>

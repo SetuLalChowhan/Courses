@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: rgb(98, 98, 155);
+        }
+
+        .heh form input {
+            background-color: white;
+            font-size: 25px;
+        }
+
+        .for {
+            font-size: 30px;
+        }
+        .heh form p1{
+            font-size: 30px;
+            color: black;
+            
+        }
+        .heh form option{
+            font-size: 30px;
+            background-color: white;
+        }
+        .heh form select{
+            font-size: 30px;
+            background-color: white;
+        }
+        #box{
+             font-size: 30px;
+             color: white;}
+        #btn{
+            background-color: rgb(216, 126, 66);
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heh">
+        <form action="">
+            <label for="lol"><p1>Name:</p1>       </label>
+            <input type="text" name="" id="lol">
+            <br>
+            <br>
+            <label> <p1> Ice-Creme Flavors:</p1>
+                <select name="icecreame" id="icecreame">
+                    <option value="">selec any flabour</option>
+                    <option value="Vanilla">Vanilla</option>
+                    <option value="Butter Pecan">Butter Pecan</option>
+                    <option value="Banana Chocolate ">Banana Chocolate </option>
+                </select>
+            </label>
+            <br>
+            <br>
+            <label for="bre"><p1>Soft Drink<p1></label>
+            <input type="text" name="" id="bre">
+        </form>
+        <br>
+        <button id="btn">submit</button>
+        <div id="box"></div>
+        
+    </div>
+    <script>
+        const inputt= document.getElementById('bre');
+        inputt.addEventListener('change',()=>{
+            const inputChange=document.getElementById('lol').value;
+            const icecream=document.getElementById('icecreame').value;
+            const drink=document.getElementById('bre').value;
+            const result=document.getElementById('box');
+         
+            const tttt=document.getElementById('btn');
+        tttt.addEventListener('click',()=>{
+           result.innerHTML=`MR ${inputChange} select ${icecream} flavor icecream with ${drink}.`;
+        });
+       
+        });
+        
+            
+
+    </script>
+</body>
+
+</html>

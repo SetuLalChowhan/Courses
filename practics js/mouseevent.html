@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: yellow;
+        }
+        p{
+            font-weight: bold;
+            font-size: 40px;
+        }
+        .hp{
+            border: 2px solid red;
+            width: 40%;
+            height: 300px;
+        }
+    </style>
+    
+</head>
+
+
+    <p id="hehe" onmousedown="mouseDown()" onmouseup="mouseUp()"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi eos consequatur natus possimus ratione incidunt delectus, ullam quisquam. Temporibus ipsam, aut obcaecati cupiditate earum sit soluta et dignissimos dolorum saepe iusto aspernatur beatae voluptatem. Tempora voluptate ut temporibus hic reprehenderit.</p>
+    <div id="hel" class="hp">
+        golam
+    </div>
+
+
+    <script>
+        const mouseDown=() =>{
+           const down= document.getElementById('hehe');
+           down.style.color='green';
+            
+        }
+        const mouseUp=()=>{
+          const up=  document.getElementById('hehe');
+          up.style.color='red';
+        
+        }
+
+        const mEnter= document.getElementById('hel');
+        mEnter.addEventListener('mouseenter',()=>{
+            mEnter.style.background="pink";
+        })
+        mEnter.addEventListener('mouseleave',()=>{
+            mEnter.style.background="brown";
+        })
+       
+    </script>
+    
+</body>
+</html>

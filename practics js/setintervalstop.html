@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Click begin to start your coutdown</p>
+    <p id="hehe"> </p>
+    <br>
+
+    <button id="btn">begin</button>
+    <button id="btn1"> End </button>
+
+
+    <script>
+        const count=document.getElementById('hehe');
+        const butt=document.getElementById('btn');
+        const buttt=document.getElementById('btn1');
+     let num=0;
+     let stoptime;
+
+     const start=()=>{
+         count.innerHTML="Loading...";
+      stoptime = setInterval(()=>{
+             count.innerHTML=`${num}`;
+             num++;
+         },1000);
+     };
+     butt.addEventListener('click',start);
+
+     buttt.addEventListener('click',()=>{
+         clearInterval(stoptime);
+     });
+
+     
+    </script>
+</body>
+</html>
