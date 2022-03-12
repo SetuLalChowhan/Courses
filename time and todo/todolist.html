@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Book List</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row py-4">
+            <h1 class="text-center">Book List</h1>
+            <div class="col-12">
+                <form>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title">
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Author</label>
+                            <input type="text" class="form-control" id="author">
+                            <div class="mb-3">
+                                <label for="year" class="form-label">Year</label>
+                                <input type="text" class="form-control" id="year">
+
+
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary mt-3 " id="add">Submit</button>
+                                    <button type="submit" class="btn btn-primary mt-3 " onclick="Remove()">Remove</button>
+                                  
+
+                                </div>
+
+
+                </form>
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Author</th>
+                                    <th scope="col">Year</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let title = document.getElementById('title');
+        let author = document.getElementById('author');
+        let year = document.getElementById('year');
+        let button = document.getElementById('add');
+        
+        let tableBody = document.getElementById('tableBody');
+
+        let Browse = (e) => {
+            e.preventDefault();
+            if (title.value == '' && author.value == '' && year.value == '') {
+                alert("Please Fill-up all information")
+            }
+            else {
+                newRow = document.createElement('tr');
+
+
+                newTitle = document.createElement('th');
+                newTitle.innerHTML = title.value
+                newRow.appendChild(newTitle);
+
+                newAuthor = document.createElement('th');
+                newAuthor.innerHTML = author.value
+                newRow.appendChild(newAuthor);
+
+                newYear = document.createElement('th');
+                newYear.innerHTML = year.value;
+                newRow.appendChild(newYear);
+
+                tableBody.appendChild(newRow);
+
+
+            }
+        }
+
+        let Remove=()=>{
+            newRow.innerHTML='';
+
+        }
+
+
+
+
+
+
+
+
+
+        button.addEventListener('click', Browse);
+
+
+    </script>
+</body>
+
+</html>

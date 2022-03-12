@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        #time {
+            font-size: 40px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center mt-4">
+                <h1>Today The Time is:</h1><br>
+                <p id="time"></p>
+                <button type="button" class="btn btn-primary" id="btn">BrowseTime</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const clock = document.getElementById('time');
+        const button = document.getElementById('btn');
+        let a, date, time;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const newTime = () => {
+            setInterval(() => {
+                a = new Date();
+                date = a.toLocaleString(undefined, options);
+                time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+                clock.innerHTML = date+ '<br> '+time;
+            }, 1000);
+
+        }
+        button.addEventListener('click', newTime);
+      
+
+
+    </script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
