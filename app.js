@@ -1,6 +1,7 @@
 const express = require("express");
 const ejs = require("ejs");
 const multer = require("multer");
+const path = require("path");
 
 const uploadFile = "./uploads";
 
@@ -13,8 +14,19 @@ app.use(express.urlencoded({extended: false}));
 
 app.set("view engine", "ejs");
 
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, uploadFile);
+    },
+    filename: (req, file, cb) => {
+        const fileExt = path.extname(file.originalname);
+        const fileName = file.originalname.replace(fileExt, "").toLowerCase().split(" ").join("-") + "-" + Date.now();
+        cb(null, fileName + fileExt);
+    },
+});
+
 const upload = multer({
-    dest: uploadFile,
+    storage: storage,
     limits: {
         fileSize: 7000000, // 1MB
     },
@@ -79,6 +91,7 @@ app.post(
         {name: "docs", maxCount: 1},
     ]),
     (req, res) => {
+        console.log(req.files);
         res.render("file");
     }
 );
